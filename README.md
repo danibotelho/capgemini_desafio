@@ -17,7 +17,7 @@
 <br>
 
 <h3> ► Foram usados: </h3>
-<p >   ▼ javaScript </p>
+<p >   ▼ JavaScript </p>
 <p >   ▼ HTML </p>
 <br>
 
