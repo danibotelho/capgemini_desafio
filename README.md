@@ -1,4 +1,6 @@
-# Desafio Capgemini - Parte 1.
+# Desafio Capgemini 
+## Parte I - Calculadora Anúncio.
+
 ## Sistema de calculadora de alcance de anúncio online.
 
 <h3> ► Dados para desenvolver a calculadora: </h3>
@@ -19,6 +21,28 @@
 <h3> ► Foram usados: </h3>
 <p >   ▼ JavaScript </p>
 <p >   ▼ HTML </p>
+<br>
+
+#  Parte 2 - Cadastro de Anúncio.
+## Sistema que permita o cadastro de anúncios.
+
+<h3> ► Objetivo desse projeto é cadastrar um anúncio com os seguintes dados: </h3>
+<p >   ▼ Nome do Anúncio. </p>
+<p >   ▼ Nome do Cliente. </p>
+<p >   ▼ Data de inicio.  </p>
+<p >   ▼ Data de término. </p>
+<p >   ▼ Investimento por dia. </p>
+<br>
+
+<h3> ► O sistema fornecerá relatatório de cada cadastro contendo: </h3>
+<p >   ▼ Valor total investido. </p>
+<p >   ▼ Quantidade máxima de visualizações. </p>
+<p >   ▼ Quantidade máxima de cliques. </p>
+<p >   ▼ Quantidade máxima de compartilhamento.</p>
+<br>
+
+<h3> ► Foi usado: </h3>
+<p >   ▼ Java </p>
 <br>
 
 <footer> Feito por Daniela Botelho </footer>
