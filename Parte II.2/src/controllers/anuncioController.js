@@ -12,9 +12,9 @@ const criaAnuncio = (request, response) =>{
     const investDiarioReq = request.body.investDiario
     const diasTotais = Utils.totalDias()
     const totalInvestido = Utils.investimentoTotal()
-    const maxViewsInf = Utils.totalVisualizacoes()
+    const maxViewsInf = Utils.maxViews()
     const maxClicksInf = Utils.maxClicks()
-    const maxShareInf = Utils.maxCompartilhamento()
+    const maxShareInf = Utils.maxShare()
    
     const novoAnuncio ={
         id: Math.random().toString(5).substr(2,9),
@@ -25,10 +25,10 @@ const criaAnuncio = (request, response) =>{
         diasDeAnuncio: diasTotais,
         investDiario: investDiarioReq,
         totalInvest: totalInvestido,
-        maxViews: maxViewsInf ,
-        maxClicks: maxClicksInf,
-        maxShare:  maxShareInf
-    }
+        maxVisualizacao: maxViewsInf ,
+        maxCliques: maxClicksInf,
+        maxCompartilhamento:  maxShareInf
+   }
 
     Anuncio.push(novoAnuncio)
 

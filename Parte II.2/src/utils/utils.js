@@ -1,90 +1,107 @@
- const Cadastro = require('../models/data.json')
+ var Cadastro = require('../models/data.json')
 
-
+ var cadastro = Cadastro
 let totalDias = () =>  {
 
     for (cadastro of Cadastro ){
-
+    
     const dataInicioReq = cadastro.dataInicio
     const dataFinalReq = cadastro.dataFinal
 
     const now = new Date(dataFinalReq) 
     const past = new Date(dataInicioReq)
     const diff = Math.abs(now.getTime() - past.getTime())
-    const days = Math.ceil(diff / (1000 * 60 * 60 * 24))
+    var days = Math.ceil(diff / (1000 * 60 * 60 * 24))
    
       console.log(days)
-      return days
+      
     }
+    return days
 }
 
+//valor total investido
 let investimentoTotal = () =>  {
 
     for (cadastro of Cadastro ){
         let dias = totalDias()
-        const investTotal = (cadastro.investDiario * dias)
+        var investTotal = (cadastro.investDiario * dias)
         
         console.log(investTotal)
-        return investTotal.toFixed(2)
-        }     
-    
+        
+     }     
+    return investTotal.toFixed(2)
 }  
 
+//visualizações pelo total valor pago
 let originalViews = () => {
 
   const investTotal = investimentoTotal()
-  const anuncioOriginalViews = investTotal * 30
+  const totalViewsPagos = investTotal * 30
    
-  console.log(anuncioOriginalViews.toFixed(2))
-  return anuncioOriginalViews.toFixed(2)
+  console.log(totalViewsPagos)
+  return totalViewsPagos
 
 }
 
-let clickVisualizacoes = () => {
+//total clicks pelas views pagas
+let totalClicks = () => {
 
-  originViews = originalViews()
+  const originViews = originalViews()
   const clickViews = originViews * 0.12
   
-  console.log(clickViews.toFixed(2))
-  return clickViews.toFixed(2)
+  console.log(clickViews)
+  return clickViews
 
 }
 
-let clickCompartilhamento = () =>{
+//compartilhamentos por clicks
+let clickShare = () =>{
 
-  clickView = clickVisualizacoes()
+  clickView = totalClicks()
   const clickCompart = clickView * 0.15
   
-  console.log(clickCompart.toFixed(2))
-  return clickCompart.toFixed(2)
+  console.log(clickCompart)
+  return clickCompart
 }
 
-let maxClicks = () => {
-
-  const clickV = clickVisualizacoes()
-  const clickC = clickCompartilhamento()
-
-  const maxCliques = clickV +clickC
-  console.log(maxCliques)
-  return maxCliques
-
-}
-
-let maxCompartilhamento = () => {
-
-  const compartClick = clickCompartilhamento()
+//Maximo compartilhamento
+let maxShare = () => {
+  const compartClick = clickShare()
   const maximoCompart = compartClick * 4;
   
-  console.log(maximoCompart.toFixed(2))
+  console.log(maximoCompart)
   return maximoCompart.toFixed(2)
 }
 
+//total de visualizações
 let  totalVisualizacoes = () => {
-  const maxShare = maxCompartilhamento()
-  const totalViews = maxShare * 40;
+
+  const max_Share = maxShare()
+  const totalViews = max_Share * 40;
   
-  console.log(totalViews.toFixed(2))
-  return totalViews.toFixed(2)
+  console.log(totalViews)
+  return totalViews
+}
+
+//maximo de cliques
+let maxClicks = () => {
+
+  const totalView = totalVisualizacoes()
+  const maximoCliques = totalView * 0.12
+  console.log(maximoCliques)
+  return maximoCliques.toFixed(2)
+
+}
+
+let maxViews =()=>{
+
+  const viewsPagos = originalViews()
+  const totalVisu = totalVisualizacoes()
+
+  const totalV = (viewsPagos + totalVisu)
+  console.log(totalV)
+  return totalV.toFixed(2)
+
 }
 
 
@@ -114,11 +131,12 @@ let  totalVisualizacoes = () => {
 
   module.exports = {
     totalDias,
-    investimentoTotal,
+    investimentoTotal, //valor investido
     originalViews,
-    clickVisualizacoes,
-    clickCompartilhamento,
-    maxCompartilhamento,
+    totalClicks,
+    clickShare,
+    maxShare, //total compatilhamento 
     totalVisualizacoes,
-    maxClicks 
+    maxClicks,  //total clicks
+    maxViews  //total total visualização
   }
