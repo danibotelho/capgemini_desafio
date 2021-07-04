@@ -23,7 +23,7 @@
 <p >   ▼ HTML </p>
 <br>
 
-#  Parte 2 - Cadastro de Anúncio.
+#  Parte 2 - JAVA - Cadastro de Anúncio.
 ## Sistema que permita o cadastro de anúncios.
 
 <h3> ► Objetivo desse projeto é cadastrar um anúncio com os seguintes dados: </h3>
@@ -41,11 +41,92 @@
 <p >   ▼ Quantidade máxima de compartilhamento.</p>
 <br>
 
-<h3> ► Foi usado: </h3>
-<p >   ▼ Java </p>
+<p> ► Para usar basta abrir o arquivo main.java, que pode ser encontrado conforme
+      caminho descrito abaixo. Recomendo o uso da IDE Eclipse para compilar e executar o 
+      arquivo.
+    </p>
+
+```bash
+		\--📂 ParteII
+			|
+			\--📂src
+			|
+			**\--📂application
+			    |   main.java**
+         
+```
+
+<br>
+
+#  Parte 2 - JavaScript - Cadastro de Anúncio.
+## Sistema que permita o cadastro de anúncios.
+<br>
+<p> O código foi escrito no VScode, para uma melhor organização usei de arquitertura MVC.
+    Foram usados JavaScript, Node.js, express, nodemon, cors, fs.
+    Para execução do código oriento o uso do Postman ou Insominia usando a rota http://localhost:3030/anuncio/ como base.
+    Para que tudo funcione com êxito é necessário seguir os comandos abaixo</p>
+    
+# Principais comando usados
+**Para iniciar pela primeira um projeto com node.js**
+
+```bash
+npm init -y
+```
+**Para instalar dependências de um projeto com node.js que já foi iniciado**
+
+```bash
+npm install
+```
+**Para rodar o servidor**
+
+```bash
+npm start
+```
+
+** Caminho da arquitetura MVC **
+```bash
+\--📂 ParteII.2
+|
+\--📂src
+|
+**\📂controllers
+  |anuncioController.js
+**\📂models
+  |data.json
+**\📂routes
+  |anuncios.routes.js
+**\📂utils
+  |utils.js
+**\--
+  |app.js
+  
+```
+
+<h3> Rotas de acesso </h3>
+
+<p> Rota base:  http://localhost:3030/anuncio </p>
+
+[POST] '/cadastrar'
+Rota usado para criar um novo anúncio.
+
+[GET] '/todos'
+Retorna todos os anúcios cadastrados.
+
+[GET] '/cliente'
+Retorna o anúncio pesquisado pelo cliente.
+
+[GET] '/dias'
+Retorna filme pelo titulo parâmetros titulo: string
+
+[DELETE] '/:id'
+Rota usada para deletar um anúncio.
 <br>
 
 <footer> Feito por Daniela Botelho </footer>
+
+
+
+
 
 
 
