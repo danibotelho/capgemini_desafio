@@ -109,14 +109,43 @@ npm start
 [POST] '/cadastrar'
 Rota usado para criar um novo anúncio.
 
+* Formato de cadastro.
+```bash
+{
+	    "nomeAnuncio":"Espaço Git",
+	    "cliente":"Github",
+	    "dataInicio":"2021/06/02",
+	    "dataFinal":"2021/08/02",
+	    "investDiario":10,
+ }
+
+```
 [GET] '/todos'
 Retorna todos os anúcios cadastrados.
+* Como a rota retorna a solicitação.
+```bash
+{
+	"id":"311040144",
+	"nomeAnuncio":"Espaço Git",
+	"cliente":"Github",
+	"dataInicio":"2021/06/02",
+	"dataFinal":"2021/08/02",
+	"diasDeAnuncio":61,
+	"investDiario":10,
+	"totalInvest":"610.00",
+	"maxVisualizacao":"71004.00",
+	"maxCliques":"6324.48",
+	"maxCompartilhamento":"1317.60"
+
+ }
+
+```
 
 [GET] '/cliente'
 Retorna o anúncio pesquisado pelo cliente.
 
 [GET] '/dias'
-Retorna filme pelo titulo parâmetros titulo: string
+Retorna o anúncio pesquisado pelo dia.
 
 [DELETE] '/:id'
 Rota usada para deletar um anúncio.
