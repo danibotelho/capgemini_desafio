@@ -4,8 +4,7 @@ const fs = require('fs')
 
 
 const criaAnuncio = (request, response) =>{
-    
-     
+      
     const nomeAnuncionoReq = request.body.nomeAnuncio
     const clienteReq = request.body.cliente
     const dataInicioReq = request.body.dataInicio
@@ -13,8 +12,10 @@ const criaAnuncio = (request, response) =>{
     const investDiarioReq = request.body.investDiario
     const diasTotais = Utils.totalDias()
     const totalInvestido = Utils.investimentoTotal()
-     
-
+    const maxViewsInf = Utils.totalVisualizacoes()
+    const maxClicksInf = Utils.maxClicks()
+    const maxShareInf = Utils.maxCompartilhamento()
+   
     const novoAnuncio ={
         id: Math.random().toString(5).substr(2,9),
         nomeAnuncio: nomeAnuncionoReq,
@@ -23,7 +24,10 @@ const criaAnuncio = (request, response) =>{
         dataFinal: dataFinalReq,
         diasDeAnuncio: diasTotais,
         investDiario: investDiarioReq,
-        totalInvest: totalInvestido
+        totalInvest: totalInvestido,
+        maxViews: maxViewsInf ,
+        maxClicks: maxClicksInf,
+        maxShare:  maxShareInf
     }
 
     Anuncio.push(novoAnuncio)
@@ -43,8 +47,7 @@ const mostrarAnuncios = (request, response)=>{
 
 }
 
-
-   const mostrarCliente = (request, response)=> { 
+const mostrarCliente = (request, response)=> { 
     
      const clienteRequirido = request.query.cliente
      const clienteFiltrado = Anuncio.find(cadastro => cadastro.cliente == clienteRequirido)
